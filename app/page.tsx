@@ -3,7 +3,7 @@
 import type React from "react"
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, FileText, Blocks, Braces, MessageSquare, Smartphone, Mail } from "lucide-react";
+import { Github, Linkedin, Instagram, FileText, Blocks, Braces, MessageSquare, Smartphone } from "lucide-react";
 import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/button";
 import SocialIcon from "@/components/social-icon";
@@ -158,6 +158,7 @@ export default function Home() {
             <div className="flex flex-wrap justify-center gap-4">
               <SocialIcon icon={<Github />} href="https://github.com/Geena254" label="GitHub" />
               <SocialIcon icon={<Linkedin />} href="https://linkedin.com/in/georgina-kimani" label="LinkedIn" />
+              <SocialIcon icon={<Instagram />} href="https://instagram.com/_k.e.e.m.a.n.e_" label="Instagram" />
               <SocialIcon icon={<MessageSquare />} href="https://discord.com/users/georgina-kimani" label="Discord" />
               <SocialIcon
                 icon={<Smartphone />}
