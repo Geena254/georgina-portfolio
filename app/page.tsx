@@ -1,13 +1,12 @@
 "use client"
 
 import type React from "react"
-
-import { useState, useEffect } from "react"
-import { motion } from "framer-motion"
-import { Github, Linkedin, Twitter, FileText, Blocks, Braces, MessageSquare, Smartphone, Mail } from "lucide-react"
-import dynamic from "next/dynamic"
-import { Button } from "@/components/ui/button"
-import SocialIcon from "@/components/social-icon"
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Github, Linkedin, Twitter, FileText, Blocks, Braces, MessageSquare, Smartphone, Mail } from "lucide-react";
+import dynamic from "next/dynamic";
+import { Button } from "@/components/ui/button";
+import SocialIcon from "@/components/social-icon";
 
 // Dynamically import components that might cause hydration issues
 const CustomCursor = dynamic(() => import("@/components/custom-cursor"), { ssr: false })
@@ -159,7 +158,6 @@ export default function Home() {
             <div className="flex flex-wrap justify-center gap-4">
               <SocialIcon icon={<Github />} href="https://github.com/Geena254" label="GitHub" />
               <SocialIcon icon={<Linkedin />} href="https://linkedin.com/in/georgina-kimani" label="LinkedIn" />
-              <SocialIcon icon={<Twitter />} href="https://twitter.com/KimaniSWE" label="Twitter" />
               <SocialIcon icon={<MessageSquare />} href="https://discord.com/users/georgina-kimani" label="Discord" />
               <SocialIcon
                 icon={<Smartphone />}

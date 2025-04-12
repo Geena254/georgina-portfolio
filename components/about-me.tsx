@@ -24,23 +24,23 @@ const timelineData = [
     location: "Remote",
     type: "Full-time",
     logo: "/company-b-logo.svg",
-    skills: ["React", "Next.js", "TailwindCSS", "Django"],
+    skills: ["React", "Django", "Next.js", "Material MUI"],
   },
 ]
 
 const skillsData = {
   "Programming Languages": [
-    { name: "JavaScript", proficiency: 90 },
-    { name: "TypeScript", proficiency: 60 },
-    { name: "HTML", proficiency: 70 },
+    { name: "JavaScript", proficiency: 75 },
+    { name: "TypeScript", proficiency: 70 },
+    { name: "HTML", proficiency: 90 },
     { name: "C", proficiency: 70 },
     { name: "CSS", proficiency: 80 },
-    { name: "Python", proficiency: 50 },
+    { name: "Python", proficiency: 60 },
   ],
   "Frameworks/Libraries": [
-    { name: "React", proficiency: 95 },
-    { name: "Next.js", proficiency: 85 },
-    { name: "Node.js", proficiency: 75 },
+    { name: "React", proficiency: 90 },
+    { name: "Next.js", proficiency: 80 },
+    { name: "Node.js", proficiency: 80 },
     { name: "Express.js", proficiency: 65 },
     { name: "Django", proficiency: 75 },
   ],
@@ -72,7 +72,7 @@ export default function AboutMe() {
             <div className="md:w-1/3">
               <div className="relative w-64 h-64 mx-auto">
                 <Image
-                  src="/images/georgina-profile.png"
+                  src="/images/georgina-profile.jpg"
                   alt="Georgina Kimani"
                   fill
                   className="rounded-lg object-cover shadow-lg"
