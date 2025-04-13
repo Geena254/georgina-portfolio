@@ -5,30 +5,25 @@ import { useFrame } from "@react-three/fiber"
 import * as THREE from "three"
 
 export default function FloatingBoxes({ count = 20 }) {
-  const mesh = useRef()
+  const mesh = useRef<THREE.Group>(null)
 
-  // Generate random boxes
   const dummyBoxes = useMemo(() => {
     return Array.from({ length: count }, () => ({
-      position: [Math.random() * 20 - 10, Math.random() * 20 - 10, Math.random() * 20 - 10],
-      rotation: [Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI],
+      position: new THREE.Vector3(Math.random() * 20 - 10, Math.random() * 20 - 10, Math.random() * 20 - 10),
+      rotation: new THREE.Euler(Math.random() * Math.PI, Math.random() * Math.PI, Math.random() * Math.PI),
       scale: Math.random() * 0.4 + 0.2,
       speed: Math.random() * 0.02 + 0.01,
     }))
   }, [count])
-
-  // Animation
+  // Use useFrame to animate the boxes
   useFrame((state) => {
     const time = state.clock.getElapsedTime()
 
     dummyBoxes.forEach((box, i) => {
       if (mesh.current && mesh.current.children[i]) {
-        const child = mesh.current.children[i]
+        const child = mesh.current.children[i] as THREE.Mesh
 
-        // Floating animation
         child.position.y += Math.sin(time * box.speed) * 0.01
-
-        // Slow rotation
         child.rotation.x += 0.002
         child.rotation.y += 0.003
       }
