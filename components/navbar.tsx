@@ -31,11 +31,6 @@ export default function Navbar() {
 
   const socialLinks = [
     {
-      icon: <Calendar size={20} />,
-      href: "https://calendar.app.google/3w5p7fGJY8DbdNda9",
-      label: "Book a Meeting",
-    },
-    {
       icon: <Mail size={20} />,
       href: "mailto:njokikimani001@gmail.com",
       label: "Email Me",
@@ -74,7 +69,21 @@ export default function Navbar() {
           GeorginaDev<span className="text-red-500">.</span>
         </Link>
 
-        {/* Social Links */}
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center space-x-8">
+          {navLinks.map((link) => (
+            <Link
+              key={link.name}
+              href={link.href}
+              className="text-gray-300 hover:text-white transition-colors duration-300 text-sm font-medium"
+              onClick={(e) => scrollToSection(e, link.href)}
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
+
+        {/* Social Links and CTA */}
         <div className="flex items-center space-x-4">
           {socialLinks.map((link, index) => (
             <motion.a
@@ -92,8 +101,17 @@ export default function Navbar() {
             </motion.a>
           ))}
 
+          <Link
+            href="https://calendar.app.google/3w5p7fGJY8DbdNda9"
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="bg-black border border-white text-white px-4 py-2 rounded font-medium text-sm transition-colors duration-300 hover:bg-white hover:text-black hidden md:block"
+          >
+            Book a Call
+          </Link>
+
           {/* Hamburger Menu */}
-          <div className="relative">
+          <div className="relative md:hidden">
             <button
               className="text-white focus:outline-none ml-2"
               onClick={() => setIsOpen(!isOpen)}
@@ -130,6 +148,20 @@ export default function Navbar() {
                         </Link>
                       </motion.div>
                     ))}
+                    <motion.div
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: navLinks.length * 0.05 }}
+                    >
+                      <Link
+                        href="https://calendar.app.google/3w5p7fGJY8DbdNda9"
+                        className="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-800 hover:text-white transition-colors duration-200"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Book a Call
+                      </Link>
+                    </motion.div>
                   </div>
                 </motion.div>
               )}
