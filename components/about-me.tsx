@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { Github, FileText, Blocks, Braces, MessageSquare } from "lucide-react"
+import { Github, FileText, Blocks, Braces, MessageSquare, Calendar, MapPin, Building2 } from "lucide-react"
 import ProjectCarousel from "./project-carousel"
 
 const skillsData = {
@@ -27,6 +27,29 @@ const skillsData = {
     { name: "Figma", proficiency: 80 },
   ],
 }
+
+// const timelineData = [
+//   {
+//     id: 1,
+//     company: "Freelance",
+//     role: "Fullstack Web Developer",
+//     period: "2024 - Present",
+//     location: "Remote",
+//     type: "Full-time",
+//     logo: "/company-a-logo.svg",
+//     skills: ["JavaScript", "React", "Node.js", "HTML", "CSS", "Django", "Python"],
+//   },
+//   {
+//     id: 2,
+//     company: "M_TREAT",
+//     role: "Fullstack Web Developer Intern",
+//     period: "Jan 2025 - May 2025",
+//     location: "Remote",
+//     type: "Full-time",
+//     logo: "/company-b-logo.svg",
+//     skills: ["React", "Django", "Next.js", "Material MUI"],
+//   },
+// ]
 
 export default function AboutMe() {
   function ServiceCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
@@ -171,6 +194,91 @@ export default function AboutMe() {
           </div>
         </motion.div>
       </div>
+      
+      {/* Timeline Section
+      <div className="mb-20">
+        <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
+            The Journey So Far
+          </span>
+          <span className="ml-2 text-white">🛤️</span>
+        </h3>
+        <div className="relative">
+          {/* Vertical Line (only visible on larger screens) */}
+          {/* <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-purple-500 to-pink-500 hidden md:block"></div> */}
+
+          {/* Timeline Items */}
+          {/* <div className="space-y-8">
+            {timelineData.map((item, index) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className={`flex flex-col ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"} gap-8 relative`}
+              > */}
+                {/* Content */}
+                {/* <div className="md:w-1/2 p-6 bg-gray-900/50 rounded-xl backdrop-blur-sm border border-gray-800">
+                  <div className="flex flex-col md:flex-row items-center gap-4"> */}
+                    {/* <div className="w-16 h-16 md:w-12 md:h-12 rounded-full bg-gray-800 flex items-center justify-center overflow-hidden mb-4 md:mb-0 mx-auto md:mx-0">
+                      <img
+                        src={item.logo || "/placeholder.svg"}
+                        alt={item.company}
+                        width={56}
+                        height={56}
+                        className="rounded-full"
+                      />
+                    </div> */}
+                    {/* <div className="text-center md:text-left">
+                      <h3 className="text-xl font-bold text-white">{item.role}</h3>
+                      <h4 className="text-lg text-purple-400">{item.company}</h4>
+                      <div className="flex items-center justify-center md:justify-start gap-2 text-gray-400 mt-1">
+                        <Calendar className="w-4 h-4" />
+                        <span className="text-sm">{item.period}</span>
+                      </div>
+                      <div className="flex items-center justify-center md:justify-start gap-2 text-gray-400">
+                        <MapPin className="w-4 h-4" />
+                        <span className="text-sm">{item.location}</span>
+                      </div>
+                      <div className="flex items-center justify-center md:justify-start gap-2 text-gray-400">
+                        <Building2 className="w-4 h-4" />
+                        <span className="text-sm">{item.type}</span>
+                      </div>
+                    </div>
+                  </div>
+                  {item.skills.length > 0 && (
+                    <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-4">
+                      {item.skills.map((skill, skillIndex) => (
+                        <span
+                          key={skillIndex}
+                          className="px-3 py-1 text-sm rounded-full bg-gradient-to-r from-purple-500/10 to-pink-500/10 text-purple-300 border border-purple-500/20"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div> */}
+
+                {/* Timeline Point (hidden on mobile) */}
+                {/* <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full hidden md:block"></div> */}
+
+                {/* Timeline Connector (hidden on mobile) */}
+                {/* {index < timelineData.length - 1 && (
+                  <motion.div
+                    initial={{ height: 0 }}
+                    whileInView={{ height: "100%" }}
+                    transition={{ duration: 0.5, delay: (index + 1) * 0.1 }}
+                    className="absolute left-1/2 transform -translate-x-1/2 w-0.5 bg-gradient-to-b from-purple-500 to-pink-500 hidden md:block"
+                    style={{ top: "100%", height: "100px" }}
+                  ></motion.div>
+                )}
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div> */}
     </section>
   )}
 

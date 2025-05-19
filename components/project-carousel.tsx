@@ -19,6 +19,37 @@ export default function ProjectCarousel() {
 
   const projects: Project[] = [
     {
+      title: "Ardo Thrive Hub website",
+      description: "A hub website for Ardo Thrive Hub showcasing what they are all about.",
+      tags: ["Next.js", "Typescript", "TailwindCSS", "React"],
+      liveUrl: "https://ardothrivinghub.vercel.app/",
+    },
+    {
+      title: "BarRush Delivery",
+      description: "A drinks delivery website using a map locater to deliver products.",
+      tags: ["Vite", "TypeScript", "React", "TailwindCSS", "Shadecn-UI", "Django Rest Framework"],
+      liveUrl: "https://barrush.co.ke",
+    },
+    {
+      title: "DJ Portfolio Website",
+      description: "A portfolio website for a DJ showcasing music and events.",
+      tags: ["Next.js", "TailwindCSS", "React"],
+      liveUrl: "https://djshangatatu.vercel.app/",
+    },
+    {
+      title: "M-TREAT Website",
+      description:
+        "A platform that links patients to doctors, hospitals, pharamacies for fast access to medical care.",
+      tags: ["React.js", "Next.js", "Django RestFramework"],
+      liveUrl: "https://m-treat.com",
+    },
+    {
+      title: "Elite Dental Studio Website",
+      description: "A business website for Elite Grillz.",
+      tags: ["React", "JavaScript", "CSS", "HTML5"],
+      liveUrl: "https://elite-grillzs.vercel.app/",
+    },
+    {
       title:"BloomBody Tracker",
       description: "An AI-powered body composition tracker landing page",
       tags: ["Typescript.js", "Tailwind.css"],
@@ -36,25 +67,6 @@ export default function ProjectCarousel() {
         "Fullstack blogging platform with permanent storage on databases, and CRUD capabilities.",
       tags: ["React.js", "FastAPI", "Redis", "PostgreSQL", "MongoDB"],
       liveUrl: "https://stylazar.vercel.app",
-    },
-    {
-      title: "M-TREAT Website",
-      description:
-        "A platform that links patients to doctors, hospitals, pharamacies for fast access to medical care.",
-      tags: ["React.js", "Next.js", "Django RestFramework"],
-      liveUrl: "https://m-treat.com",
-    },
-    {
-      title: "Elite Dental Studio Website",
-      description: "A business website for Elite Grillz.",
-      tags: ["React", "JavaScript", "CSS", "HTML5"],
-      liveUrl: "https://elite-grillzs.vercel.app/",
-    },
-    {
-      title: "DJ Portfolio Website",
-      description: "A portfolio website for a DJ showcasing music and events.",
-      tags: ["Next.js", "TailwindCSS", "React"],
-      liveUrl: "https://djshangatatu.vercel.app/",
     },
     {
       title: "E-commerce Platform",
