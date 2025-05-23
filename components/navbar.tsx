@@ -60,7 +60,7 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed top-4 left-1/4 -translate-x-1/2 z-50 w-[75%] max-w-4xl rounded-full backdrop-blur-lg bg-gradient-to-r from-purple-400/30 via-pink-400/30 to-purple-400/30 shadow-xl px-6 py-3"
+      className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[75%] max-w-2xl rounded-full backdrop-blur-lg bg-gradient-to-r from-purple-400/30 via-pink-400/30 to-purple-400/30 shadow-xl px-6 py-3"
     >
     {/* This outer div now centers everything inside it */}
     <div className="flex justify-between items-center w-full">
