@@ -7,7 +7,8 @@ import { Github, Linkedin, Instagram, MessageSquare, Smartphone, Calendar, MapPi
 import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/button";
 import SocialIcon from "@/components/social-icon";
-
+import Lottie from "lottie-react";
+import devAnimation from "../public/images/anime.json";
 
 // Dynamically import components that might cause hydration issues
 const CustomCursor = dynamic(() => import("@/components/custom-cursor"), { ssr: false })
@@ -53,40 +54,74 @@ export default function Home() {
       <InteractiveShapes />
 
       {/* Hero Section with Animated Boxes */}
-      <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-950">
         <AnimatedBoxes />
         <div className="container relative z-10 px-4 mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center"
+            className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12"
           >
-            <div>
+            {/* 👉 Lottie Animation on the Left */}
+            <div className="w-60 h-60">
+              <Lottie
+                animationData={devAnimation}
+                loop={true}
+                autoplay={true}
+                className="w-full h-full"
+              />
+            </div>
+
+            {/* 👉 Text content */}
+            <div className="text-center max-w-2xl relative">
+              {/* 🚨 Callout Badge */}
+              <span className="inline-block px-3 py-1 mb-3 text-sm font-medium text-white bg-gradient-to-r from-green-400 to-blue-500 rounded-full shadow-lg">
+                Available for Freelance 🚀
+              </span>
+
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
                 Your All-In-One<br />
                 Dev and Designer
               </h1>
-            </div>
-            <h2 className="text-xl md:text-2xl mb-8 text-gray-300">
-              🚀 Full-Stack Developer | UI/UX Designer | Tech Explorer
-            </h2>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button
-                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white"
-                onClick={() => scrollToSection("about")}
-              >
-                View Projects
-              </Button>
-              <Button
-                variant="outline"
-                className="bg-transparent border-2 border-purple-500 text-white hover:bg-purple-500 hover:text-white transition-all duration-300"
-                onClick={() => scrollToSection("about")}
-              >
-                About Me
-              </Button>
+
+              <h2 className="text-xl md:text-2xl mb-4 text-gray-300">
+                🚀 Full-Stack Developer | UI/UX Designer | Tech Explorer
+              </h2>
+
+              <p className="text-md md:text-xl text-gray-300 mb-6">
+                I help startups and teams bring their ideas to life through clean code,<br />
+                pixel-perfect design, and lightning-fast delivery.
+              </p>
+
+              <p className="text-sm text-gray-400 mb-6">
+                Trusted by teams at <span className="text-white font-semibold">Ardo Thrive Hub</span>, <span className="text-white font-semibold">AfyaSoko</span>, and more.
+              </p>
+
+              <div className="flex flex-wrap justify-center gap-4">
+                <Button
+                  className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white"
+                  onClick={() => scrollToSection("about")}
+                >
+                  View Projects
+                </Button>
+                <Button
+                  variant="outline"
+                  className="bg-transparent border-2 border-purple-500 text-white hover:bg-purple-500 hover:text-white transition-all duration-300"
+                  onClick={() => scrollToSection("about")}
+                >
+                  About Me
+                </Button>
+              </div>
             </div>
           </motion.div>
+        </div>
+
+        {/* ⬇️ Scroll Down Indicator */}
+        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2">
+          <div className="animate-bounce text-white text-2xl">
+            ↓
+          </div>
         </div>
       </section>
 
