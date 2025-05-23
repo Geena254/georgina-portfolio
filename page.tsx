@@ -8,7 +8,7 @@ import dynamic from "next/dynamic";
 import { Button } from "@/components/ui/button";
 import SocialIcon from "@/components/social-icon";
 import Lottie from "lottie-react";
-import devAnimation from "../public/images/anime.json";
+import devAnimation from "./public/images/anime.json";
 
 // Dynamically import components that might cause hydration issues
 const CustomCursor = dynamic(() => import("@/components/custom-cursor"), { ssr: false })
