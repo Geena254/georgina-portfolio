@@ -63,7 +63,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12"
           >
-            {/* 👉 Lottie Animation on the Left */}
+            {/* Lottie Animation on the Left */}
             <div className="w-60 h-60">
               <Lottie
                 animationData={devAnimation}
@@ -73,7 +73,7 @@ export default function Home() {
               />
             </div>
 
-            {/* 👉 Text content */}
+            {/* Text content */}
             <div className="text-center max-w-2xl relative">
               {/* 🚨 Callout Badge */}
               <span className="inline-block px-3 py-1 mb-3 text-sm font-medium text-white bg-gradient-to-r from-green-400 to-blue-500 rounded-full shadow-lg">
@@ -117,7 +117,7 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* ⬇️ Scroll Down Indicator */}
+        {/* Scroll Down Indicator */}
         <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2">
           <div className="animate-bounce text-white text-2xl">
             ↓
