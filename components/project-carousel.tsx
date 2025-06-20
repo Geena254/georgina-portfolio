@@ -19,9 +19,15 @@ export default function ProjectCarousel() {
 
   const projects: Project[] = [
     {
+      title: "Amani Assist Website",
+      description: "A small business website for Amani Assist showcasing what they are all about.",
+      tags: ["Next.js", "Typescript", "TailwindCSS", "React"],
+      liveUrl: "https://amani-assist.vercel.app/",
+    },
+    {
       title: "Ardo Thrive Hub website",
       description: "A hub website for Ardo Thrive Hub showcasing what they are all about.",
-      tags: ["Next.js", "Typescript", "TailwindCSS", "React"],
+      tags: ["Next.js", "Typescript", "TailwindCSS", "React", "Resend"],
       liveUrl: "https://ardothrivinghub.vercel.app/",
     },
     {
@@ -51,7 +57,7 @@ export default function ProjectCarousel() {
     },
     {
       title:"BloomBody Tracker",
-      description: "An AI-powered body composition tracker landing page",
+      description: "An AI-powered body composition tracker.",
       tags: ["Typescript.js", "Tailwind.css"],
       liveUrl: "https://bloombodyaitracker.vercel.app",
     },
@@ -72,13 +78,13 @@ export default function ProjectCarousel() {
       title: "E-commerce Platform",
       description: "Full-featured online store with product catalog and payment processing.",
       tags: ["React", "Node.js", "Express", "MongoDB", "Postgresql"],
-      liveUrl: "https://lagenti.verecel.app/",
+      liveUrl: "https://lagenti.vercel.app/",
     },
     {
       title: "School Management System",
       description: "Collaborative task management school system with real-time updates.",
       tags: ["Next.js", "React", "MongoDB", "Postgresql", "TailwindCSS"],
-      liveUrl: "https://school.verecel.app/",
+      liveUrl: "https://school.vercel.app/",
     },
   ]
 
