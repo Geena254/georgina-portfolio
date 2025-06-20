@@ -59,20 +59,36 @@ const timelineData = [
     logo: "/company-b-logo.svg",
     skills: ["React", "Django", "Next.js", "Material MUI"],
   },
-
+]
+const services = [
+  {
+    icon: <Blocks className="w-6 h-6 text-purple-400" />,
+    title: "Frontend Development",
+    description: "Custom frontend sites from Figma designs."
+  },
+  {
+    icon: <Braces className="w-6 h-6 text-pink-400" />,
+    title: "Full Stack Development",
+    description: "End-to-end web app development using modern frameworks."
+  },
+  {
+    icon: <FileText className="w-6 h-6 text-purple-400" />,
+    title: "API Integration",
+    description: "Connecting third-party APIs seamlessly."
+  },
+  {
+    icon: <Github className="w-6 h-6 text-pink-400" />,
+    title: "Web3 Integration",
+    description: "Incorporate decentralized tech into your app stack."
+  },
+  {
+    icon: <MessageSquare className="w-6 h-6 text-purple-400" />,
+    title: "Technical Consultation",
+    description: "Expert advice on tech architecture and implementation."
+  }
 ]
 
 export default function AboutMe() {
-  function ServiceCard({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
-    return (
-      <div className="p-6 rounded-lg bg-gray-900 border border-gray-800 hover:border-purple-500 transition-all duration-300 text-center md:text-left">
-        <div className="mb-4 flex justify-center md:justify-start">{icon}</div>
-        <h3 className="text-xl font-bold mb-3 text-white">{title}</h3>
-        <p className="text-gray-400">{description}</p>
-      </div>
-      )
-    }
-
   const sectionContainer = "container mx-auto px-4";
 
   return (
@@ -141,7 +157,7 @@ export default function AboutMe() {
           </div>
 
           {/* Services Section */}
-          <section id="services" className="py-5 bg-black">
+          <section id="services" className="py-20 bg-black">
             <div className="container px-4 mx-auto">
               <motion.div
                 initial={{ opacity: 0 }}
@@ -155,32 +171,34 @@ export default function AboutMe() {
                   </span>
                   <span className="ml-2 text-white">🛠️</span>
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  <ServiceCard
-                    icon={<Blocks className="w-10 h-10 text-purple-500" />}
-                    title="Frontend Development"
-                    description="Custom frontend sites from Figma designs."
-                  />
-                  <ServiceCard
-                    icon={<Braces className="w-10 h-10 text-purple-500" />}
-                    title="Full Stack Development"
-                    description="End-to-end web application development with modern frameworks and best practices."
-                  />
-                  <ServiceCard
-                    icon={<FileText className="w-10 h-10 text-pink-500" />}
-                    title="API Integration"
-                    description="Seamless integration of different APIs into existing applications and platforms."
-                  />
-                  <ServiceCard
-                    icon={<Github className="w-10 h-10 text-purple-500" />}
-                    title="Web3 Integration"
-                    description="Seamless integration of Web3 technologies into existing applications and platforms."
-                  />
-                  <ServiceCard
-                    icon={<MessageSquare className="w-10 h-10 text-pink-500" />}
-                    title="Technical Consultation"
-                    description="Expert advice on blockchain architecture, technology stack selection, and implementation strategies."
-                  />
+          
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                  {services.map((service, index) => (
+                    <div
+                      key={index}
+                      className="relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-lg border border-white/10 rounded-2xl p-6 shadow-lg group transition-transform hover:-translate-y-2 hover:shadow-2xl"
+                    >
+                      {/* Icon */}
+                      <div className="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 mb-4">
+                        {service.icon}
+                      </div>
+          
+                      {/* Title & Description */}
+                      <h3 className="text-xl font-semibold text-white mb-2">
+                        {service.title}
+                      </h3>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        {service.description}
+                      </p>
+          
+                      {/* Overlay Phone Mockup */}
+                      <img
+                        src="/assets/phone-mockup.png"
+                        alt="Mockup"
+                        className="absolute right-[-20px] bottom-[-30px] w-24 opacity-80 group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
+                  ))}
                 </div>
               </motion.div>
             </div>
