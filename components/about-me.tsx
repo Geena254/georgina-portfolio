@@ -207,22 +207,65 @@ export default function AboutMe() {
           <hr className="my-20 border-t border-purple-500/10" />
 
           {/* Skills Section */}
-          <div>
-            <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center">
+          <div className="py-20 bg-black text-white">
+            <h3 className="text-3xl md:text-4xl font-bold mb-12 text-center">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
                 Code Alchemist
               </span>
-              <span className="ml-2 text-white">⚔️</span>
+              <span className="ml-2">⚔️</span>
             </h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
               {Object.entries(skillsData).map(([category, skills]) => (
-                <div key={category} className="p-6 bg-gray-900/50 rounded-xl backdrop-blur-sm border border-gray-800">
-                  <h4 className="text-xl font-bold mb-4 text-purple-400 text-center md:text-left">{category}</h4>
-                  {skills.map((skill) => (
-                    <SkillBar key={skill.name} name={skill.name} proficiency={skill.proficiency} />
-                  ))}
+                <div
+                  key={category}
+                  className="relative p-6 bg-gradient-to-br from-gray-800/60 to-gray-900/80 rounded-2xl border border-white/10 shadow-md hover:shadow-xl transition"
+                >
+                  <div className="absolute top-0 left-0 w-full h-full rounded-2xl backdrop-blur-lg pointer-events-none"></div>
+          
+                  <h4 className="text-xl font-semibold text-purple-400 mb-6 text-center md:text-left">
+                    {category}
+                  </h4>
+          
+                  <div className="space-y-4">
+                    {skills.map((skill) => (
+                      <div key={skill.name}>
+                        <div className="flex justify-between text-sm mb-1">
+                          <span>{skill.name}</span>
+                          <span className="text-gray-400">{skill.proficiency}%</span>
+                        </div>
+                        <div className="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                          <div
+                            className="h-full bg-gradient-to-r from-purple-400 to-pink-500 rounded-full transition-all duration-700"
+                            style={{ width: `${skill.proficiency}%` }}
+                          ></div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
+            </div>
+          
+            {/* Bonus Section: Hiring Highlights */}
+            <div className="mt-16 text-center max-w-4xl mx-auto">
+              <h4 className="text-2xl font-bold mb-4 text-white">What I Bring to the Table 🧠</h4>
+              <div className="flex flex-wrap justify-center gap-4">
+                {[
+                  "Pixel-perfect UIs",
+                  "Full-stack app delivery",
+                  "Clean, maintainable code",
+                  "API integration expertise",
+                  "Agile & remote collaboration",
+                ].map((highlight) => (
+                  <span
+                    key={highlight}
+                    className="inline-block text-sm px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-sm"
+                  >
+                    {highlight}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>
