@@ -215,42 +215,47 @@ export default function AboutMe() {
               <span className="ml-2">⚔️</span>
             </h3>
           
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {/* Skills Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
               {Object.entries(skillsData).map(([category, skills]) => (
                 <div
                   key={category}
-                  className="relative p-6 bg-gradient-to-br from-gray-800/60 to-gray-900/80 rounded-2xl border border-white/10 shadow-md hover:shadow-xl transition"
+                  className="relative rounded-2xl p-6 bg-gradient-to-br from-gray-800/60 to-gray-900/80 border border-white/10 shadow-lg transition hover:shadow-xl overflow-hidden"
                 >
-                  <div className="absolute top-0 left-0 w-full h-full rounded-2xl backdrop-blur-lg pointer-events-none"></div>
+                  {/* Background Blur Layer */}
+                  <div className="absolute inset-0 backdrop-blur-md z-0 rounded-2xl"></div>
           
-                  <h4 className="text-xl font-semibold text-purple-400 mb-6 text-center md:text-left">
-                    {category}
-                  </h4>
+                  {/* Foreground Content */}
+                  <div className="relative z-10">
+                    <h4 className="text-xl font-semibold text-purple-400 mb-6 text-center sm:text-left">
+                      {category}
+                    </h4>
           
-                  <div className="space-y-4">
-                    {skills.map((skill) => (
-                      <div key={skill.name}>
-                        <div className="flex justify-between text-sm mb-1">
-                          <span>{skill.name}</span>
-                          <span className="text-gray-400">{skill.proficiency}%</span>
+                    <div className="space-y-4">
+                      {skills.map((skill) => (
+                        <div key={skill.name}>
+                          <div className="flex justify-between text-sm mb-1">
+                            <span>{skill.name}</span>
+                            <span className="text-gray-400">{skill.proficiency}%</span>
+                          </div>
+                          <div className="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
+                            <div
+                              className="h-full bg-gradient-to-r from-purple-400 to-pink-500 rounded-full transition-all duration-700"
+                              style={{ width: `${skill.proficiency}%` }}
+                            ></div>
+                          </div>
                         </div>
-                        <div className="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
-                          <div
-                            className="h-full bg-gradient-to-r from-purple-400 to-pink-500 rounded-full transition-all duration-700"
-                            style={{ width: `${skill.proficiency}%` }}
-                          ></div>
-                        </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
           
-            {/* Bonus Section: Hiring Highlights */}
-            <div className="mt-16 text-center max-w-4xl mx-auto">
-              <h4 className="text-2xl font-bold mb-4 text-white">What I Bring to the Table 🧠</h4>
-              <div className="flex flex-wrap justify-center gap-4">
+            {/* Hiring Highlights */}
+            <div className="mt-16 text-center max-w-4xl mx-auto px-4">
+              <h4 className="text-2xl font-bold mb-6">What I Bring to the Table 🧠</h4>
+              <div className="flex flex-wrap justify-center gap-3">
                 {[
                   "Pixel-perfect UIs",
                   "Full-stack app delivery",
@@ -260,7 +265,7 @@ export default function AboutMe() {
                 ].map((highlight) => (
                   <span
                     key={highlight}
-                    className="inline-block text-sm px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-sm"
+                    className="text-sm px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-sm"
                   >
                     {highlight}
                   </span>
