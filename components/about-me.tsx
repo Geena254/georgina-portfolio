@@ -251,27 +251,6 @@ export default function AboutMe() {
                 </div>
               ))}
             </div>
-          
-            {/* Hiring Highlights */}
-            <div className="mt-16 text-center max-w-4xl mx-auto px-4">
-              <h4 className="text-2xl font-bold mb-6">What I Bring to the Table 🧠</h4>
-              <div className="flex flex-wrap justify-center gap-3">
-                {[
-                  "Pixel-perfect UIs",
-                  "Full-stack app delivery",
-                  "Clean, maintainable code",
-                  "API integration expertise",
-                  "Agile & remote collaboration",
-                ].map((highlight) => (
-                  <span
-                    key={highlight}
-                    className="text-sm px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-sm"
-                  >
-                    {highlight}
-                  </span>
-                ))}
-              </div>
-            </div>
           </div>
         </motion.div>
       </div>
