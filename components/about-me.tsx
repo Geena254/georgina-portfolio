@@ -157,7 +157,7 @@ export default function AboutMe() {
           </div>
 
           {/* Services Section */}
-          <section id="services" className="py-20 bg-black">
+          <section id="services" className="py-5 bg-black">
             <div className="container px-4 mx-auto">
               <motion.div
                 initial={{ opacity: 0 }}
@@ -207,7 +207,7 @@ export default function AboutMe() {
           <hr className="my-20 border-t border-purple-500/10" />
 
           {/* Skills Section */}
-          <div className="py-20 bg-black text-white">
+          <div className="py-5 bg-black text-white">
             <h3 className="text-3xl md:text-4xl font-bold mb-12 text-center">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
                 Code Alchemist
