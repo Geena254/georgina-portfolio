@@ -74,11 +74,9 @@ export default function AboutMe() {
     }
 
   const sectionContainer = "container mx-auto px-4";
-  const sectionWrapper = "py-20";
-  const cardBackground = "bg-gray-900/60 backdrop-blur-md border border-gray-800 rounded-xl shadow-md";
 
   return (
-    <section id="about" className="bg-gradient-to-b from-black to-gray-900">
+    <section id="about" className="bg-black">
       <div className={sectionContainer}>
         <motion.div
           initial={{ opacity: 0 }}
@@ -143,7 +141,7 @@ export default function AboutMe() {
           </div>
 
           {/* Services Section */}
-          <section id="services" className="py-20 bg-black">
+          <section id="services" className="py-5 bg-black">
             <div className="container px-4 mx-auto">
               <motion.div
                 initial={{ opacity: 0 }}
@@ -215,7 +213,7 @@ export default function AboutMe() {
       <hr className="my-20 border-t border-purple-500/10" />
 
       {/* Timeline Section */}
-      <div className={`${sectionWrapper} bg-gray-950`}>
+      <div className="py-5 bg-black">
         <div className={sectionContainer}>
           <h3 className="text-2xl md:text-3xl font-bold mb-12 text-center">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">

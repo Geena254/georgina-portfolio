@@ -17,7 +17,7 @@ const Loading = dynamic(() => import("@/components/loading"), { ssr: false })
 const InteractiveShapes = dynamic(() => import("@/components/interactive-shapes"), { ssr: false })
 const AnimatedBoxes = dynamic(() => import("@/components/AnimatedBoxes"), { ssr: false })
 const AboutMe = dynamic(() => import("@/components/about-me"), { ssr: false })
-const ContactCTA = dynamic(() => import("@/components/contact-cta"), { ssr: false })
+const ContactCTA = dynamic(() => import("./contact-cta"), { ssr: false })
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -126,7 +126,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-gradient-to-b from-black to-gray-900">
+      <section id="about" className="py-20 bg-black to-gray-900">
         <div className="container px-4 mx-auto">
           <AboutMe />
         </div>
@@ -135,18 +135,19 @@ export default function Home() {
       {/* Contact CTA Section */}
       <ContactCTA />
 
+      {/* Divider */}
+      <hr className="px-8 mt-6 mx-4 md:mx-10 lg:mx-20 border-t border-purple-500/10" />
+
       {/* Footer with Social Links */}
-      <footer className="py-12 bg-gradient-to-t from-gray-900 to-black">
+      <footer className="py-12 bg-gradient-to-t from-gray-900 to-black px-8 pb-10 mx-4 md:mx-10 lg:mx-20">
         <div className="container px-4 mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            {/* Text content on the left */}
             <div className="text-gray-300">
               <h3 className="mb-1">Georgina Dev.</h3>
               <div className="text-gray-500 text-sm">
                 © {new Date().getFullYear()} Georgina Kimani. All rights reserved.
               </div>
             </div>
-
             {/* Social links on the right */}
             <div className="flex flex-wrap justify-center gap-4">
               <SocialIcon icon={<Github />} href="https://github.com/Geena254" label="GitHub" />

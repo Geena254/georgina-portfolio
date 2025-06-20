@@ -1,4 +1,10 @@
 {
+  "app/page.tsx -> ./contact-cta": {
+    "id": "app/page.tsx -> ./contact-cta",
+    "files": [
+      "static/chunks/_app-pages-browser_app_contact-cta_tsx.js"
+    ]
+  },
   "app/page.tsx -> @/components/AnimatedBoxes": {
     "id": "app/page.tsx -> @/components/AnimatedBoxes",
     "files": [
@@ -9,12 +15,6 @@
     "id": "app/page.tsx -> @/components/about-me",
     "files": [
       "static/chunks/_app-pages-browser_components_about-me_tsx.js"
-    ]
-  },
-  "app/page.tsx -> @/components/contact-cta": {
-    "id": "app/page.tsx -> @/components/contact-cta",
-    "files": [
-      "static/chunks/_app-pages-browser_components_contact-cta_tsx.js"
     ]
   },
   "app/page.tsx -> @/components/custom-cursor": {
