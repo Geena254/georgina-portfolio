@@ -5,7 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
   icons: {
-    icon: "/images/favico.ico"
+    icon: "/images/favicon.ico"
   },
   title: "GeorginaDev",
   description:

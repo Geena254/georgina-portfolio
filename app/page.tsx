@@ -136,7 +136,7 @@ export default function Home() {
       <ContactCTA />
 
       {/* Divider */}
-      <hr className="px-8 mt-6 mx-4 md:mx-10 lg:mx-20 border-t border-purple-500/10" />
+      <hr className="px-8 mx-4 md:mx-10 lg:mx-20 border-t border-purple-500/10" />
 
       {/* Footer with Social Links */}
       <footer className="py-12 bg-gradient-to-t from-gray-900 to-black px-8 pb-10 mx-4 md:mx-10 lg:mx-20">
@@ -152,7 +152,6 @@ export default function Home() {
             <div className="flex flex-wrap justify-center gap-4">
               <SocialIcon icon={<Github />} href="https://github.com/Geena254" label="GitHub" />
               <SocialIcon icon={<Linkedin />} href="https://linkedin.com/in/georgina-kimani" label="LinkedIn" />
-              <SocialIcon icon={<Instagram />} href="https://instagram.com/_k.e.e.m.a.n.e_" label="Instagram" />
               <SocialIcon icon={<MessageSquare />} href="https://discord.com/users/georgina-kimani" label="Discord" />
               <SocialIcon
                 icon={<Smartphone />}

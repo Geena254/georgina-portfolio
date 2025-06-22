@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { Github, FileText, Blocks, Braces, MessageSquare, Calendar, MapPin, Building2 } from "lucide-react"
+import { Github, Figma, FileText, Blocks, Braces, MessageSquare, Calendar, MapPin, Building2 } from "lucide-react"
 import ProjectCarousel from "./project-carousel"
 
 const skillsData = {
@@ -36,7 +36,7 @@ const timelineData = [
     period: "2024 - Present",
     location: "Remote",
     type: "Full-time",
-    logo: "/company-a-logo.svg",
+    logo: "/images/favicon.ico",
     skills: ["JavaScript", "React", "Node.js", "HTML", "CSS", "Django", "Python"],
   },
   {
@@ -46,7 +46,7 @@ const timelineData = [
     period: "May 2025 - Present",
     location: "Remote",
     type: "Full-time",
-    logo: "/company-b-logo.svg",
+    logo: "/images/afya 4.jpg",
     skills: ["Next.js", "FastAPI", "TailwindCSS"],
   },
   {
@@ -56,7 +56,7 @@ const timelineData = [
     period: "Jan 2025 - May 2025",
     location: "Remote",
     type: "Full-time",
-    logo: "/company-b-logo.svg",
+    logo: "/images/favicon.ico",
     skills: ["React", "Django", "Next.js", "Material MUI"],
   },
 ]
@@ -70,6 +70,11 @@ const services = [
     icon: <Braces className="w-6 h-6 text-pink-400" />,
     title: "Full Stack Development",
     description: "End-to-end web app development using modern frameworks."
+  },
+  {
+    icon: <Figma className="w-6 h-6 text-pink-400" />,
+    title: "UI/UX Design",
+    description: "Figma designs for your app."
   },
   {
     icon: <FileText className="w-6 h-6 text-purple-400" />,
@@ -114,6 +119,7 @@ export default function AboutMe() {
                   src="/images/georgina-profile.jpg"
                   alt="Georgina Kimani"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover"
                   priority
                 />
@@ -182,7 +188,6 @@ export default function AboutMe() {
                       <div className="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 mb-4">
                         {service.icon}
                       </div>
-          
                       {/* Title & Description */}
                       <h3 className="text-xl font-semibold text-white mb-2">
                         {service.title}
@@ -190,10 +195,9 @@ export default function AboutMe() {
                       <p className="text-gray-300 text-sm leading-relaxed">
                         {service.description}
                       </p>
-          
                       {/* Overlay Phone Mockup */}
                       <img
-                        src="/assets/phone-mockup.png"
+                        src="/images/phone-mockup.png"
                         alt="Mockup"
                         className="absolute right-[-20px] bottom-[-30px] w-24 opacity-80 group-hover:scale-105 transition-transform duration-300"
                       />
@@ -204,7 +208,7 @@ export default function AboutMe() {
             </div>
           </section>
           {/* Sections separator */}
-          <hr className="my-20 border-t border-purple-500/10" />
+          <hr className="my-10 border-t border-purple-500/10" />
 
           {/* Skills Section */}
           <div className="py-5 bg-black text-white">
@@ -255,7 +259,7 @@ export default function AboutMe() {
         </motion.div>
       </div>
       {/* Sections separator */}
-      <hr className="my-20 border-t border-purple-500/10" />
+      <hr className="my-10 border-t border-purple-500/10" />
 
       {/* Timeline Section */}
       <div className="py-5 bg-black">
@@ -344,23 +348,5 @@ export default function AboutMe() {
         </div>
       </div>
     </section>
-  )}
-
-function SkillBar({ name, proficiency }) {
-  return (
-    <div className="mb-4">
-      <div className="flex justify-between mb-1">
-        <span className="text-gray-300">{name}</span>
-        <span className="text-gray-400">{proficiency}%</span>
-      </div>
-      <div className="h-2 bg-gray-700 rounded-full overflow-hidden">
-        <motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: `${proficiency}%` }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className="h-full bg-gradient-to-r from-purple-500 to-pink-500"
-        />
-      </div>
-    </div>
   )
 }
