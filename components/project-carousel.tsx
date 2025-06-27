@@ -31,13 +31,13 @@ export default function ProjectCarousel() {
       title: "Ardo Thrive Hub website",
       description: "A hub website for Ardo Thrive Hub showcasing what they are all about.",
       tags: ["Next.js", "Typescript", "TailwindCSS", "React", "Resend"],
-      liveUrl: "https://ardothrivinghub.vercel.app/",
+      liveUrl: "https://ardothrivinghub.org/",
     },
     {
       title: "AppyDrop Delivery",
       description: "A drinks delivery website using a map locater to deliver products.",
       tags: ["Vite", "TypeScript", "Next.js", "TailwindCSS", "Django Rest Framework", "Supabase"],
-      liveUrl: "https://appydrop.vercel.app",
+      liveUrl: "https://appydrop.netlify.app",
     },
     {
       title:"BloomBody Tracker",
