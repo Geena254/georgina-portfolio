@@ -25,17 +25,26 @@ export default function ProjectCarousel() {
       title: "Amani Assist Website",
       description: "A small business website for Amani Assist showcasing what they are all about.",
       tags: ["Next.js", "Typescript", "TailwindCSS", "React"],
-      image: "/screenshots/amani.png",
       liveUrl: "https://amani-assist.vercel.app/",
     },
     {
-      title: "BarRush Delivery",
-      description: "A drinks delivery website using a map locater to deliver products.",
-      tags: ["Vite", "TypeScript", "React", "TailwindCSS", "Django"],
-      image: "/screenshots/barrush.png",
-      liveUrl: "https://barrush.co.ke",
+      title: "Ardo Thrive Hub website",
+      description: "A hub website for Ardo Thrive Hub showcasing what they are all about.",
+      tags: ["Next.js", "Typescript", "TailwindCSS", "React", "Resend"],
+      liveUrl: "https://ardothrivinghub.vercel.app/",
     },
-    // Add more projects...
+    {
+      title: "AppyDrop Delivery",
+      description: "A drinks delivery website using a map locater to deliver products.",
+      tags: ["Vite", "TypeScript", "Next.js", "TailwindCSS", "Django Rest Framework", "Supabase"],
+      liveUrl: "https://appydrop.vercel.app",
+    },
+    {
+      title:"BloomBody Tracker",
+      description: "An AI-powered body composition tracker.",
+      tags: ["Typescript.js", "Next.js", "Tailwind.css", "Resend"],
+      liveUrl: "https://bloombodyaitracker.vercel.app",
+    },
   ]
 
   useEffect(() => {
@@ -129,7 +138,7 @@ export default function ProjectCarousel() {
                       isActive ? "border-purple-500" : "border-gray-800"
                     } shadow-lg h-full`}
                   >
-                    {project.image && (
+{/*                     {project.image && (
                       <div
                         className="mb-6 w-full h-56 relative rounded-lg overflow-hidden cursor-pointer"
                         onClick={() => setLightboxImage(project.image!)}
@@ -142,7 +151,7 @@ export default function ProjectCarousel() {
                           unoptimized
                         />
                       </div>
-                    )}
+                    )} */}
                     <h3 className="text-2xl font-bold mb-3 text-white text-center md:text-left">{project.title}</h3>
                     <p className="text-gray-400 mb-4 text-center md:text-left">{project.description}</p>
                     <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
