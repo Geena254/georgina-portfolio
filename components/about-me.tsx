@@ -7,24 +7,26 @@ import ProjectCarousel from "./project-carousel"
 
 const skillsData = {
   "Programming Languages": [
-    { name: "JavaScript", proficiency: 75 },
-    { name: "TypeScript", proficiency: 70 },
-    { name: "HTML", proficiency: 90 },
-    { name: "C", proficiency: 70 },
-    { name: "TailwindCSS", proficiency: 80 },
-    { name: "Python", proficiency: 60 },
+    { name: "JavaScript" },
+    { name: "TypeScript" },
+    { name: "HTML" },
+    { name: "C" },
+    { name: "AI" },
+    { name: "CSS" },
+    { name: "TailwindCSS" },
+    { name: "Python" },
   ],
   "Frameworks/Libraries": [
-    { name: "React", proficiency: 90 },
-    { name: "Next.js", proficiency: 80 },
-    { name: "Node.js", proficiency: 80 },
-    { name: "Express.js", proficiency: 65 },
-    { name: "Django", proficiency: 75 },
+    { name: "React" },
+    { name: "Next.js" },
+    { name: "Node.js" },
+    { name: "Express.js" },
+    { name: "Django" },
   ],
   Tools: [
-    { name: "Git", proficiency: 98 },
-    { name: "Docker", proficiency: 88 },
-    { name: "Figma", proficiency: 80 },
+    { name: "Git" },
+    { name: "Docker" },
+    { name: "Figma" },
   ],
 }
 
@@ -156,14 +158,18 @@ export default function AboutMe() {
               </div>
             </div>
           </div>
+          {/* Sections separator */}
+          <hr className="my-10 border-t border-purple-500/10" />
 
           {/* Projects Section */}
-          <div className="mb-28">
+          <div>
             <ProjectCarousel />
           </div>
+          {/* Sections separator */}
+          <hr className="my-10 border-t border-purple-500/10" />
 
           {/* Services Section */}
-          <section id="services" className="py-5 bg-black">
+          <section id="services" className="py-14 bg-black">
             <div className="container px-4 mx-auto">
               <motion.div
                 initial={{ opacity: 0 }}
@@ -211,49 +217,51 @@ export default function AboutMe() {
           <hr className="my-10 border-t border-purple-500/10" />
 
           {/* Skills Section */}
-          <div className="py-5 bg-black text-white">
-            <h3 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
-                Code Alchemist
-              </span>
-              <span className="ml-2">⚔️</span>
-            </h3>
-          
-            {/* Skills Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
-              {Object.entries(skillsData).map(([category, skills]) => (
-                <div
-                  key={category}
-                  className="relative rounded-2xl p-6 bg-gradient-to-br from-gray-800/60 to-gray-900/80 border border-white/10 shadow-lg transition hover:shadow-xl overflow-hidden"
-                >
-                  {/* Background Blur Layer */}
-                  <div className="absolute inset-0 backdrop-blur-md z-0 rounded-2xl"></div>
-          
-                  {/* Foreground Content */}
-                  <div className="relative z-10">
-                    <h4 className="text-xl font-semibold text-purple-400 mb-6 text-center sm:text-left">
-                      {category}
-                    </h4>
-          
-                    <div className="space-y-4">
-                      {skills.map((skill) => (
-                        <div key={skill.name}>
-                          <div className="flex justify-between text-sm mb-1">
-                            <span>{skill.name}</span>
-                            <span className="text-gray-400">{skill.proficiency}%</span>
-                          </div>
-                          <div className="w-full bg-gray-800 h-2 rounded-full overflow-hidden">
-                            <div
-                              className="h-full bg-gradient-to-r from-purple-400 to-pink-500 rounded-full transition-all duration-700"
-                              style={{ width: `${skill.proficiency}%` }}
-                            ></div>
-                          </div>
-                        </div>
-                      ))}
+          <div className="py-16 bg-black text-white">
+            <div className="max-w-6xl mx-auto px-4">
+              <h3 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
+                  Code Alchemist
+                </span>
+                <span className="ml-2">⚔️</span>
+              </h3>
+
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                {Object.values(skillsData).flat().map((skill, index) => (
+                  <motion.div
+                    key={`${skill.name}-${index}`}
+                    whileHover={{ y: -5, scale: 1.05 }}
+                    className="flex flex-col items-center p-4 bg-gray-900/50 rounded-xl border border-gray-800/50 hover:border-purple-500/30 transition-all duration-300"
+                  >
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center mb-3">
+                      <span className="text-2xl">
+                        {(() => {
+                          const iconMap = {
+                            'JavaScript': 'JS',
+                            'TypeScript': 'TS',
+                            'React': '⚛️',
+                            'Next.js': '▫️',
+                            'Node.js': '🟢',
+                            'Express.js': '🚀',
+                            'Django': '🐍',
+                            'Git': '🔀',
+                            'Docker': '🐳',
+                            'Figma': '🎨',
+                            'HTML': '📝',
+                            'CSS': '🎨',
+                            'TailwindCSS': '🌊',
+                            'Python': '🐍',
+                            'C': 'C',
+                            'AI': '🤖'
+                          };
+                          return iconMap[skill.name] || skill.name.charAt(0);
+                        })()}
+                      </span>
                     </div>
-                  </div>
-                </div>
-              ))}
+                    <span className="text-sm font-medium text-center">{skill.name}</span>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>

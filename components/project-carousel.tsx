@@ -10,41 +10,65 @@ interface Project {
   title: string
   description: string
   tags: string[]
-  image?: string
-  liveUrl?: string
+  image: string
+  liveUrl: string
 }
 
 export default function ProjectCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
-  const [lightboxImage, setLightboxImage] = useState<string | null>(null)
   const autoplayRef = useRef<NodeJS.Timeout | null>(null)
 
   const projects: Project[] = [
     {
-      title: "Amani Assist Website",
-      description: "A small business website for Amani Assist showcasing what they are all about.",
+      title: "AfyaSoko website",
+      description: "A modern business website for AfyaSoko, featuring their services with a clean, professional design.",
       tags: ["Next.js", "Typescript", "TailwindCSS", "React"],
-      liveUrl: "https://amani-assist.vercel.app/",
+      image: "/images/afyasoko.jpg",
+      liveUrl: "https://afyasoko.com/"
     },
     {
-      title: "Ardo Thrive Hub website",
-      description: "A hub website for Ardo Thrive Hub showcasing what they are all about.",
-      tags: ["Next.js", "Typescript", "TailwindCSS", "React", "Resend"],
-      liveUrl: "https://ardothrivinghub.org/",
+      title: "Amani Assist",
+      description: "A modern business website for Amani Assist, featuring their services with a clean, professional design.",
+      tags: ["Next.js", "Typescript", "TailwindCSS", "React"],
+      image: "/images/amani-assist.jpg",
+      liveUrl: "https://amani-assist.vercel.app/"
+    },
+    {
+      title: "Ardo Thrive Hub",
+      description: "A vibrant community hub website with event management and resource sharing capabilities.",
+      tags: ["Next.js", "Typescript", "TailwindCSS", "Resend"],
+      image: "/images/ardo-thrive.jpg",
+      liveUrl: "https://ardothrivinghub.org/"
     },
     {
       title: "AppyDrop Delivery",
-      description: "A drinks delivery website using a map locater to deliver products.",
-      tags: ["Vite", "TypeScript", "Next.js", "TailwindCSS", "Django Rest Framework", "Supabase"],
-      liveUrl: "https://appydrop.netlify.app",
+      description: "An interactive delivery platform with real-time order tracking and map integration.",
+      tags: ["Next.js", "TypeScript", "Django", "Supabase"],
+      image: "/images/appydrop.jpg",
+      liveUrl: "https://appydrop.netlify.app"
     },
     {
-      title:"BloomBody Tracker",
-      description: "An AI-powered body composition tracker.",
-      tags: ["Typescript.js", "Next.js", "Tailwind.css", "Resend"],
-      liveUrl: "https://bloombodyaitracker.vercel.app",
+      title: "Georgina Dev's Portfolio website",
+      description: "A portfolio website for Georgina Dev, featuring their services with a clean, professional design.",
+      tags: ["Next.js", "Typescript", "TailwindCSS", "React"],
+      image: "/images/georgina-dev.jpg",
+      liveUrl: "https://georgina-dev.vercel.app/"
     },
+    {
+      title: "BloomBody AI Tracker",
+      description: "AI-powered fitness tracking application with body composition analysis.",
+      tags: ["Next.js", "TypeScript", "TailwindCSS", "AI/ML"],
+      image: "/images/bloombody.jpg",
+      liveUrl: "https://bloombodyaitracker.vercel.app"
+    },
+    {
+      title: "Elite Grillz",
+      description: "E-commerce platform for premium dental jewelry with a modern, responsive design.",
+      tags: ["React", "JavaScript", "TailwindCSS", "E-commerce"],
+      image: "/images/elite-grillz.jpg",
+      liveUrl: "https://elite-grillzs.vercel.app"
+    }
   ]
 
   useEffect(() => {
@@ -67,31 +91,34 @@ export default function ProjectCarousel() {
   const nextSlide = () => setCurrentIndex((prev) => (prev + 1) % projects.length)
 
   return (
-    <div className="py-8 md:py-12">
-      <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
-          What I've Built
-        </span>
-        <span className="ml-2 text-white">🏗️</span>
-      </h2>
+    <div className="py-2 md:py-4 bg-black">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold mb-2">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-purple-600">
+              What I've Built
+            </span>
+            <span className="ml-2">🏗️</span>
+          </h2>
+        </div>
 
-      <div className="max-w-7xl mx-auto px-4 md:px-12 relative">
-        {!isMobile && (
-          <>
-            <button
-              onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/80 text-white p-2 rounded-full"
-            >
-              <ChevronLeft size={24} />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/80 text-white p-2 rounded-full"
-            >
-              <ChevronRight size={24} />
-            </button>
-          </>
-        )}
+        <div className="max-w-7xl mx-auto px-4 md:px-12 relative">
+          {!isMobile && (
+            <>
+              <button
+                onClick={prevSlide}
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/80 text-white p-2 rounded-full"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/80 text-white p-2 rounded-full"
+              >
+                <ChevronRight size={24} />
+              </button>
+            </>
+          )}
 
         <div className={isMobile ? "grid gap-10" : "overflow-hidden"}>
           <motion.div
@@ -134,48 +161,46 @@ export default function ProjectCarousel() {
                   }
                 >
                   <div
-                    className={`p-6 sm:p-8 rounded-lg bg-gray-900 border ${
-                      isActive ? "border-purple-500" : "border-gray-800"
-                    } shadow-lg h-full`}
+                    className={`relative overflow-hidden rounded-xl bg-gray-900 border-2 transition-all duration-300 hover:shadow-xl ${
+                      isActive
+                        ? 'border-purple-500/50 shadow-lg shadow-purple-500/20'
+                        : 'border-gray-800 hover:border-purple-500/30'
+                    } h-full flex flex-col`}
                   >
-{/*                     {project.image && (
-                      <div
-                        className="mb-6 w-full h-56 relative rounded-lg overflow-hidden cursor-pointer"
-                        onClick={() => setLightboxImage(project.image!)}
-                      >
-                        <Image
-                          src={project.image}
-                          alt={project.title}
-                          fill
-                          className="object-cover transition-transform duration-300 hover:scale-105"
-                          unoptimized
-                        />
-                      </div>
-                    )} */}
-                    <h3 className="text-2xl font-bold mb-3 text-white text-center md:text-left">{project.title}</h3>
-                    <p className="text-gray-400 mb-4 text-center md:text-left">{project.description}</p>
-                    <div className="flex flex-wrap justify-center md:justify-start gap-2 mb-4">
-                      {project.tags.map((tag, i) => (
-                        <span
-                          key={i}
-                          className="text-sm px-3 py-1 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-purple-300"
-                        >
-                          {tag}
-                        </span>
-                      ))}
+                    <div className="relative h-48 overflow-hidden">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
-                    {project.liveUrl && isActive && (
-                      <div className="mt-4 text-center md:text-left">
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium rounded-md text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all duration-300"
-                        >
-                          View Live Site
-                        </a>
+                    <div className="p-6 flex-1 flex flex-col">
+                      <h3 className="text-2xl font-bold mb-2 text-white">{project.title}</h3>
+                      <p className="text-gray-300 mb-4 flex-1">{project.description}</p>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {project.tags.map((tag, i) => (
+                          <span
+                            key={i}
+                            className="text-xs px-3 py-1 rounded-full bg-gray-800 text-gray-200"
+                          >
+                            {tag}
+                          </span>
+                        ))}
                       </div>
-                    )}
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-auto inline-flex items-center justify-center w-full px-4 py-3 text-sm font-medium rounded-lg text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      View Live Site
+                      <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                    </div>
                   </div>
                 </motion.div>
               )
@@ -183,32 +208,8 @@ export default function ProjectCarousel() {
           </motion.div>
         </div>
       </div>
+    </div>
 
-      {/* Lightbox Modal */}
-      <Dialog open={!!lightboxImage} onClose={() => setLightboxImage(null)} className="fixed z-50 inset-0">
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm" aria-hidden="true" />
-        <div className="fixed inset-0 flex items-center justify-center p-4">
-          <Dialog.Panel className="relative bg-black rounded-xl p-4 shadow-lg">
-            <button
-              onClick={() => setLightboxImage(null)}
-              className="absolute top-2 right-2 text-white hover:text-red-400"
-            >
-              <X size={24} />
-            </button>
-            {lightboxImage && (
-              <div className="w-[90vw] h-[60vh] relative">
-                <Image
-                  src={lightboxImage}
-                  alt="Lightbox Preview"
-                  fill
-                  className="object-contain rounded-md"
-                  unoptimized
-                />
-              </div>
-            )}
-          </Dialog.Panel>
-        </div>
-      </Dialog>
     </div>
   )
 }
