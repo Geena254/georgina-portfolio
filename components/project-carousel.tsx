@@ -77,6 +77,13 @@ export default function ProjectCarousel() {
       liveUrl: "https://bloombodyaitracker.vercel.app/"
     },
     {
+      title: "Affirm G website",
+      description: "A modern website for Affirm G, where yu can track your tasks, goals, affirmations, reflections and moods with a clean, professional design.",
+      tags: ["HTML", "CSS", "React", "MongoDB"],
+      image: "/images/affirmg.jpg",
+      liveUrl: "https://affirm-g.vercel.app/"
+    },
+    {
       title: "Elite Grillz",
       description: "E-commerce platform for premium dental jewelry with a modern, responsive design.",
       tags: ["React", "JavaScript", "TailwindCSS", "E-commerce"],
