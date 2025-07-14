@@ -49,6 +49,20 @@ export default function ProjectCarousel() {
       liveUrl: "https://appydrop.netlify.app"
     },
     {
+      title: "DJ Shangatatu's Portfolio website",
+      description: "A portfolio website for DJ Shangatatu, featuring their services with a clean, professional design.",
+      tags: ["Next.js", "TypeScript", "TailwindCSS", "Landing Page"],
+      image: "/images/shanga.jpg",
+      liveUrl: "https://djshangatatu.vercel.app/"
+    },
+    {
+      title: "Fake News Detector",
+      description: "AI-powered fitness tracking application with body composition analysis.",
+      tags: ["Vite", "React", "TypeScript", "TailwindCSS"],
+      image: "/images/fake-news.jpg",
+      liveUrl: "https://fake-news-detector-1.vercel.app/"
+    },
+    {
       title: "Georgina Dev's Portfolio website",
       description: "A portfolio website for Georgina Dev, featuring their services with a clean, professional design.",
       tags: ["Next.js", "Typescript", "TailwindCSS", "React"],
@@ -60,14 +74,14 @@ export default function ProjectCarousel() {
       description: "AI-powered fitness tracking application with body composition analysis.",
       tags: ["Next.js", "TypeScript", "TailwindCSS", "AI/ML"],
       image: "/images/bloombody.jpg",
-      liveUrl: "https://bloombodyaitracker.vercel.app"
+      liveUrl: "https://bloombodyaitracker.vercel.app/"
     },
     {
       title: "Elite Grillz",
       description: "E-commerce platform for premium dental jewelry with a modern, responsive design.",
       tags: ["React", "JavaScript", "TailwindCSS", "E-commerce"],
       image: "/images/elite-grillz.jpg",
-      liveUrl: "https://elite-grillzs.vercel.app"
+      liveUrl: "https://elite-grillzs.vercel.app/"
     }
   ]
 

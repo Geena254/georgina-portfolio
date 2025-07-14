@@ -128,7 +128,9 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="py-20 bg-black to-gray-900">
         <div className="container px-4 mx-auto">
-          <AboutMe />
+          <div className="flex flex-col gap-12">
+            <AboutMe />
+          </div>
         </div>
       </section>
 

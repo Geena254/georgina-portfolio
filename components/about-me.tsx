@@ -4,6 +4,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { Github, Figma, FileText, Blocks, Braces, MessageSquare, Calendar, MapPin, Building2 } from "lucide-react"
 import ProjectCarousel from "./project-carousel"
+import Certificates from "./Certificates"
 
 const skillsData = {
   "Programming Languages": [
@@ -266,6 +267,11 @@ export default function AboutMe() {
           </div>
         </motion.div>
       </div>
+      {/* Sections separator */}
+      <hr className="my-10 border-t border-purple-500/10" />
+
+      {/* Certificates Section */}
+      <Certificates />
       {/* Sections separator */}
       <hr className="my-10 border-t border-purple-500/10" />
 
